@@ -12,7 +12,7 @@ on:
         required: false
         default: '1300'
   schedule:
-    - cron: '0 1 * * 1,3,5'  # 每周一、三、五 9:00 (UTC+8)
+    - cron: '0 1 * * 1,3,5'
 
 jobs:
   generate:
@@ -30,9 +30,9 @@ jobs:
           pip install requests pillow beautifulsoup4
           sudo apt-get update && sudo apt-get install -y fonts-wqy-microhei          
       
-      - name: Generate questionnaire
+      - name: Create Python script
         run: |
-          python3 << 'PYTHON_SCRIPT'
+          cat > generate.py << 'EOF'
           import os
           import random
           import requests
@@ -47,7 +47,6 @@ jobs:
           print(f"🎯 抽取难度范围: {MIN_RATING} - {MAX_RATING}")
           print("="*60)
 
-          # 1. 获取题目列表
           response = requests.get("https://codeforces.com/api/problemset.problems", timeout=30)
           data = response.json()
           problems = data['result']['problems']
@@ -64,7 +63,6 @@ jobs:
           print(f"\n📝 选中: {problem['name']} (难度: {problem.get('rating')})")
           print(f"🔗 https://codeforces.com/contest/{contest_id}/problem/{index}")
 
-          # 2. 爬取题目内容
           url = f"https://codeforces.com/contest/{contest_id}/problem/{index}"
           response = requests.get(url, timeout=30)
           soup = BeautifulSoup(response.text, 'html.parser')
@@ -79,7 +77,6 @@ jobs:
           
           print(f"✅ 题目描述已获取 ({len(content_cn)} 字符)")
 
-          # 3. 生成图片
           WIDTH = 1200
           HEIGHT = 1800
           LINE_HEIGHT = 45
@@ -94,23 +91,18 @@ jobs:
           font_small = ImageFont.truetype(font_path, 18)
           
           y = 80
-          # 标题
           draw.text((WIDTH//2, y), "思维流问卷", font=font_title, fill=(80, 70, 60), anchor="mm")
           y += 70
           
-          # 题目名
           draw.text((WIDTH//2, y), f"「{title_cn}」", font=font_normal, fill=(100, 90, 80), anchor="mm")
           y += 60
           
-          # 提示
           draw.text((WIDTH//2, y), "记录你完整的思考过程（不要只写答案）", font=font_small, fill=(150, 140, 130), anchor="mm")
           y += 60
           
-          # 题目描述
           draw.text((PADDING, y), "题目描述:", font=font_normal, fill=(80, 70, 60))
           y += 40
           
-          # 🔧 修复：正确的自动换行逻辑
           max_width = WIDTH - 2 * PADDING
           lines = []
           current_line = ""
@@ -128,7 +120,7 @@ jobs:
           
           for line in lines:
               if y + LINE_HEIGHT > HEIGHT - 200:
-                  break  # 防止超出图片边界
+                  break
               draw.text((PADDING, y), line, font=font_normal, fill=(100, 90, 80))
               y += LINE_HEIGHT
           
@@ -136,15 +128,12 @@ jobs:
           draw.text((PADDING, y), "我的思考:", font=font_normal, fill=(80, 70, 60))
           y += 50
           
-          # 绘制空白书写区域
           for line_y in range(y, HEIGHT - 80, 40):
               draw.line([(PADDING, line_y), (WIDTH - PADDING, line_y)], fill=(200, 195, 185), width=1)
           
-          # 页脚
           draw.text((WIDTH//2, HEIGHT - 40), "语言塑造思维 · 认知改变人生  |  github.com/EasonTechno/MetaLanguage", 
                    font=font_small, fill=(150, 140, 130), anchor="mm")
 
-          # 4. 保存文件
           os.makedirs('thinking-questionnaires', exist_ok=True)
           today = datetime.now().strftime('%Y%m%d')
           safe_title = ''.join(c for c in title_cn if c.isalnum() or c in (' ', '-', '_')).strip()
@@ -156,7 +145,6 @@ jobs:
           img.save(img_path, dpi=(300, 300))
           print(f"\n✅ 图片已生成: {img_path}")
           
-          # 生成Markdown
           with open(md_path, 'w', encoding='utf-8') as f:
               f.write(f"# 思维流问卷 - {title_cn}\n\n")
               f.write(f"**难度**: {problem.get('rating')}\n\n")
@@ -164,20 +152,23 @@ jobs:
               f.write(f"---\n\n")
               f.write(f"## 我的思考\n\n")
               for _ in range(20):
-                  f.write("_\n\n")  # 空白区域
+                  f.write("_\n\n")
           
           print(f"✅ Markdown已生成: {md_path}")
           print("\n" + "="*60)
           print("🎉 问卷生成完成!")
-          PYTHON_SCRIPT          
+          EOF          
         env:
           MIN_RATING: ${{ github.event.inputs.min_rating || 800 }}
           MAX_RATING: ${{ github.event.inputs.max_rating || 1300 }}
+
+      - name: Run Python script
+        run: python3 generate.py
 
       - name: Commit and Push
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add thinking-questionnaires/ || true
+          git add thinking-questionnaires/
           git commit -m "🧠 Auto-generate thinking flow questionnaire $(date +%Y-%m-%d)" || echo "No changes to commit"
-          git push          
+          git push      
