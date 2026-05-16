@@ -1,0 +1,179 @@
+name: 📝 Codeforces 中文问卷生成
+
+on:
+  workflow_dispatch:
+    inputs:
+      difficulty:
+        description: '题目难度 (例如: 1000, 1200, 1500)'
+        required: false
+        default: '1200'
+      count:
+        description: '题目数量'
+        required: false
+        default: '3'
+  schedule:
+    # 每周一早上 8 点自动生成
+    - cron: '0 0 * * 1'
+
+jobs:
+  generate-questionnaire:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4
+
+      - name: Generate Codeforces questionnaire
+        env:
+          DIFFICULTY: ${{ github.event.inputs.difficulty || '1200' }}
+          COUNT: ${{ github.event.inputs.count || '3' }}
+        run: |
+          cat > generate_questionnaire.py << 'SCRIPT'
+          import requests
+          import random
+          import json
+          from datetime import datetime
+          import os
+          import base64
+          
+          # 使用有道翻译 API（免费）
+          def translate_text(text, to_lang='zh-CN'):
+              if not text or len(text.strip()) == 0:
+                  return text
+              try:
+                  url = f'https://fanyi.youdao.com/translate?&doctype=json&type=EN2ZH_CN&i={requests.utils.quote(text[:1000])}'
+                  response = requests.get(url, timeout=10)
+                  if response.status_code == 200:
+                      result = response.json()
+                      if result.get('errorCode') == 0:
+                          translated = ''
+                          for item in result['translateResult']:
+                              for part in item:
+                                  translated += part.get('tgt', '')
+                          return translated
+              except Exception as e:
+                  print(f"翻译出错: {e}")
+              return text
+          
+          # 从 Codeforces 获取题目
+          def get_codeforces_problems(min_rating, max_rating, count=3):
+              try:
+                  response = requests.get('https://codeforces.com/api/problemset.problems', timeout=30)
+                  data = response.json()
+                  
+                  if data['status'] != 'OK':
+                      print("获取题目失败")
+                      return []
+                  
+                  problems = data['result']['problems']
+                  
+                  # 筛选指定难度范围的题目
+                  filtered = []
+                  for p in problems:
+                      if 'rating' in p and min_rating <= p['rating'] <= max_rating:
+                          filtered.append(p)
+                  
+                  print(f"找到 {len(filtered)} 个符合条件的题目")
+                  
+                  # 随机选择
+                  selected = random.sample(filtered, min(count, len(filtered)))
+                  return selected
+              except Exception as e:
+                  print(f"获取题目出错: {e}")
+                  return []
+          
+          def main():
+              difficulty = int(os.environ.get('DIFFICULTY', 1200))
+              count = int(os.environ.get('COUNT', 3))
+              
+              min_rating = max(800, difficulty - 100)
+              max_rating = min(3500, difficulty + 100)
+              
+              print(f"获取难度范围: {min_rating} - {max_rating}, 数量: {count}")
+              
+              problems = get_codeforces_problems(min_rating, max_rating, count)
+              
+              if not problems:
+                  print("未获取到题目，使用备用方案")
+                  # 如果 API 失败，使用简单版本
+                  problems = [
+                      {'contestId': 1, 'index': 'A', 'name': 'Test Problem 1', 'rating': 1200},
+                      {'contestId': 2, 'index': 'B', 'name': 'Test Problem 2', 'rating': 1200},
+                      {'contestId': 3, 'index': 'C', 'name': 'Test Problem 3', 'rating': 1200},
+                  ]
+              
+              # 生成问卷
+              today = datetime.now().strftime('%Y-%m-%d')
+              markdown = f'# Codeforces 思维训练问卷 - {today}\n\n'
+              markdown += f'## 题目难度: ~{difficulty}\n\n'
+              markdown += '---\n\n'
+              
+              for i, problem in enumerate(problems, 1):
+                  contest_id = problem['contestId']
+                  index = problem['index']
+                  name = problem['name']
+                  rating = problem.get('rating', 'N/A')
+                  url = f'https://codeforces.com/contest/{contest_id}/problem/{index}'
+                  
+                  # 翻译题目名称
+                  name_cn = translate_text(name)
+                  
+                  markdown += f'## 第 {i} 题: {name} ({name_cn})\n\n'
+                  markdown += f'**难度**: {rating} 分\n\n'
+                  markdown += f'**原题链接**: [{url}]({url})\n\n'
+                  
+                  markdown += '### 题目描述\n\n'
+                  markdown += '*(请点击上方链接查看完整题目描述)*\n\n'
+                  
+                  markdown += '### 思考过程\n\n'
+                  markdown += '> 请在此处写下你的思维过程，如何分析问题，如何推导解法：\n\n'
+                  markdown += '- 第一步：\n'
+                  markdown += '- 第二步：\n'
+                  markdown += '- 第三步：\n'
+                  markdown += '- 最终思路：\n\n'
+                  
+                  markdown += '### 解题方案\n\n'
+                  markdown += '```python\n# 写下你的代码解决方案\n\n```\n\n'
+                  
+                  markdown += '### 总结与反思\n\n'
+                  markdown += '- 遇到的难点：\n'
+                  markdown += '- 学到的知识点：\n'
+                  markdown += '- 可以改进的地方：\n\n'
+                  
+                  markdown += '---\n\n'
+              
+              # 添加总评
+              markdown += '## 本次训练总评\n\n'
+              markdown += '- 完成时间：\n'
+              markdown += '- 正确率：\n'
+              markdown += '- 收获与体会：\n\n'
+              
+              # 保存文件
+              os.makedirs('问卷', exist_ok=True)
+              filename = f'问卷/Codeforces_训练问卷_{today}.md'
+              with open(filename, 'w', encoding='utf-8') as f:
+                  f.write(markdown)
+              
+              print(f"问卷已生成: {filename}")
+          
+          if __name__ == '__main__':
+              main()
+          SCRIPT
+          
+          python generate_questionnaire.py
+
+      - name: Commit and push questionnaire
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add 问卷/*.md
+          git commit -m "生成 Codeforces 训练问卷 $(date +%Y-%m-%d)" || echo "No changes to commit"
+          git push
