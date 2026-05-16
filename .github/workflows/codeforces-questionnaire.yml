@@ -30,140 +30,129 @@ jobs:
           pip install requests pillow beautifulsoup4
           sudo apt-get update && sudo apt-get install -y fonts-wqy-microhei          
       
-      - name: Create Python script
+      - name: Run generator
         run: |
-          cat > generate.py << 'EOF'
-          import os
-          import random
-          import requests
-          from bs4 import BeautifulSoup
-          from PIL import Image, ImageDraw, ImageFont
-          from datetime import datetime
+          python3 << 'HEREDOC'          
+import os, random, requests
+from bs4 import BeautifulSoup
+from PIL import Image, ImageDraw, ImageFont
+from datetime import datetime
 
-          MIN_RATING = int(os.getenv('MIN_RATING', 800))
-          MAX_RATING = int(os.getenv('MAX_RATING', 1300))
+MIN_RATING = int(os.getenv('MIN_RATING', 800))
+MAX_RATING = int(os.getenv('MAX_RATING', 1300))
 
-          print("="*60)
-          print(f"🎯 抽取难度范围: {MIN_RATING} - {MAX_RATING}")
-          print("="*60)
+print("="*60)
+print(f"Difficulty range: {MIN_RATING} - {MAX_RATING}")
+print("="*60)
 
-          response = requests.get("https://codeforces.com/api/problemset.problems", timeout=30)
-          data = response.json()
-          problems = data['result']['problems']
-          
-          math_problems = [p for p in problems 
-                          if 'math' in p.get('tags', []) 
-                          and MIN_RATING <= p.get('rating', 0) <= MAX_RATING]
-          
-          print(f"✅ 找到 {len(math_problems)} 道符合条件的题目")
-          
-          problem = random.choice(math_problems)
-          contest_id = problem['contestId']
-          index = problem['index']
-          print(f"\n📝 选中: {problem['name']} (难度: {problem.get('rating')})")
-          print(f"🔗 https://codeforces.com/contest/{contest_id}/problem/{index}")
+response = requests.get("https://codeforces.com/api/problemset.problems", timeout=30)
+data = response.json()
+problems = data['result']['problems']
 
-          url = f"https://codeforces.com/contest/{contest_id}/problem/{index}"
-          response = requests.get(url, timeout=30)
-          soup = BeautifulSoup(response.text, 'html.parser')
-          
-          problem_statement = soup.find('div', class_='problem-statement')
-          if not problem_statement:
-              raise Exception("无法解析题目内容")
-          
-          title_cn = problem['name']
-          paragraphs = problem_statement.find_all('p')
-          content_cn = "\n".join([p.get_text(strip=True) for p in paragraphs[:5]])
-          
-          print(f"✅ 题目描述已获取 ({len(content_cn)} 字符)")
+math_problems = [p for p in problems 
+                if 'math' in p.get('tags', []) 
+                and MIN_RATING <= p.get('rating', 0) <= MAX_RATING]
 
-          WIDTH = 1200
-          HEIGHT = 1800
-          LINE_HEIGHT = 45
-          PADDING = 100
-          
-          img = Image.new('RGB', (WIDTH, HEIGHT), color=(245, 240, 230))
-          draw = ImageDraw.Draw(img)
-          
-          font_path = "/usr/share/fonts/truetype/wqy/wqy-microhei.ttc"
-          font_title = ImageFont.truetype(font_path, 40)
-          font_normal = ImageFont.truetype(font_path, 24)
-          font_small = ImageFont.truetype(font_path, 18)
-          
-          y = 80
-          draw.text((WIDTH//2, y), "思维流问卷", font=font_title, fill=(80, 70, 60), anchor="mm")
-          y += 70
-          
-          draw.text((WIDTH//2, y), f"「{title_cn}」", font=font_normal, fill=(100, 90, 80), anchor="mm")
-          y += 60
-          
-          draw.text((WIDTH//2, y), "记录你完整的思考过程（不要只写答案）", font=font_small, fill=(150, 140, 130), anchor="mm")
-          y += 60
-          
-          draw.text((PADDING, y), "题目描述:", font=font_normal, fill=(80, 70, 60))
-          y += 40
-          
-          max_width = WIDTH - 2 * PADDING
-          lines = []
-          current_line = ""
-          
-          for char in content_cn:
-              test_line = current_line + char
-              bbox = draw.textbbox((0, 0), test_line, font=font_normal)
-              if bbox[2] - bbox[0] < max_width:
-                  current_line = test_line
-              else:
-                  lines.append(current_line)
-                  current_line = char
-          if current_line:
-              lines.append(current_line)
-          
-          for line in lines:
-              if y + LINE_HEIGHT > HEIGHT - 200:
-                  break
-              draw.text((PADDING, y), line, font=font_normal, fill=(100, 90, 80))
-              y += LINE_HEIGHT
-          
-          y += 40
-          draw.text((PADDING, y), "我的思考:", font=font_normal, fill=(80, 70, 60))
-          y += 50
-          
-          for line_y in range(y, HEIGHT - 80, 40):
-              draw.line([(PADDING, line_y), (WIDTH - PADDING, line_y)], fill=(200, 195, 185), width=1)
-          
-          draw.text((WIDTH//2, HEIGHT - 40), "语言塑造思维 · 认知改变人生  |  github.com/EasonTechno/MetaLanguage", 
-                   font=font_small, fill=(150, 140, 130), anchor="mm")
+print(f"Found {len(math_problems)} problems")
 
-          os.makedirs('thinking-questionnaires', exist_ok=True)
-          today = datetime.now().strftime('%Y%m%d')
-          safe_title = ''.join(c for c in title_cn if c.isalnum() or c in (' ', '-', '_')).strip()
-          base_name = f"questionnaire_{today}_{safe_title}"
-          
-          img_path = f"thinking-questionnaires/{base_name}.png"
-          md_path = f"thinking-questionnaires/{base_name}.md"
-          
-          img.save(img_path, dpi=(300, 300))
-          print(f"\n✅ 图片已生成: {img_path}")
-          
-          with open(md_path, 'w', encoding='utf-8') as f:
-              f.write(f"# 思维流问卷 - {title_cn}\n\n")
-              f.write(f"**难度**: {problem.get('rating')}\n\n")
-              f.write(f"**题目描述**:\n{content_cn}\n\n")
-              f.write(f"---\n\n")
-              f.write(f"## 我的思考\n\n")
-              for _ in range(20):
-                  f.write("_\n\n")
-          
-          print(f"✅ Markdown已生成: {md_path}")
-          print("\n" + "="*60)
-          print("🎉 问卷生成完成!")
-          EOF          
+problem = random.choice(math_problems)
+contest_id = problem['contestId']
+index = problem['index']
+print(f"\nSelected: {problem['name']} (Rating: {problem.get('rating')})")
+
+url = f"https://codeforces.com/contest/{contest_id}/problem/{index}"
+response = requests.get(url, timeout=30)
+soup = BeautifulSoup(response.text, 'html.parser')
+
+problem_statement = soup.find('div', class_='problem-statement')
+title_cn = problem['name']
+paragraphs = problem_statement.find_all('p')
+content_cn = "\n".join([p.get_text(strip=True) for p in paragraphs[:5]])
+
+WIDTH = 1200
+HEIGHT = 1800
+LINE_HEIGHT = 45
+PADDING = 100
+
+img = Image.new('RGB', (WIDTH, HEIGHT), color=(245, 240, 230))
+draw = ImageDraw.Draw(img)
+
+font_path = "/usr/share/fonts/truetype/wqy/wqy-microhei.ttc"
+font_title = ImageFont.truetype(font_path, 40)
+font_normal = ImageFont.truetype(font_path, 24)
+font_small = ImageFont.truetype(font_path, 18)
+
+y = 80
+draw.text((WIDTH//2, y), "Thinking Flow Questionnaire", font=font_title, fill=(80, 70, 60), anchor="mm")
+y += 70
+
+draw.text((WIDTH//2, y), title_cn, font=font_normal, fill=(100, 90, 80), anchor="mm")
+y += 60
+
+draw.text((WIDTH//2, y), "Record your complete thinking process (not just the answer)", font=font_small, fill=(150, 140, 130), anchor="mm")
+y += 60
+
+draw.text((PADDING, y), "Problem Description:", font=font_normal, fill=(80, 70, 60))
+y += 40
+
+max_width = WIDTH - 2 * PADDING
+lines = []
+current_line = ""
+
+for char in content_cn:
+    test_line = current_line + char
+    bbox = draw.textbbox((0, 0), test_line, font=font_normal)
+    if bbox[2] - bbox[0] < max_width:
+        current_line = test_line
+    else:
+        lines.append(current_line)
+        current_line = char
+if current_line:
+    lines.append(current_line)
+
+for line in lines:
+    if y + LINE_HEIGHT > HEIGHT - 200:
+        break
+    draw.text((PADDING, y), line, font=font_normal, fill=(100, 90, 80))
+    y += LINE_HEIGHT
+
+y += 40
+draw.text((PADDING, y), "My Thinking:", font=font_normal, fill=(80, 70, 60))
+y += 50
+
+for line_y in range(y, HEIGHT - 80, 40):
+    draw.line([(PADDING, line_y), (WIDTH - PADDING, line_y)], fill=(200, 195, 185), width=1)
+
+draw.text((WIDTH//2, HEIGHT - 40), "Language shapes thought · github.com/EasonTechno/MetaLanguage", 
+         font=font_small, fill=(150, 140, 130), anchor="mm")
+
+os.makedirs('thinking-questionnaires', exist_ok=True)
+today = datetime.now().strftime('%Y%m%d')
+safe_title = ''.join(c for c in title_cn if c.isalnum() or c in (' ', '-', '_')).strip()
+base_name = f"questionnaire_{today}_{safe_title}"
+
+img_path = f"thinking-questionnaires/{base_name}.png"
+md_path = f"thinking-questionnaires/{base_name}.md"
+
+img.save(img_path, dpi=(300, 300))
+print(f"\nImage saved: {img_path}")
+
+with open(md_path, 'w', encoding='utf-8') as f:
+    f.write(f"# Thinking Flow Questionnaire - {title_cn}\n\n")
+    f.write(f"**Difficulty**: {problem.get('rating')}\n\n")
+    f.write(f"**Description**:\n{content_cn}\n\n")
+    f.write(f"---\n\n")
+    f.write(f"## My Thinking\n\n")
+    for _ in range(20):
+        f.write("_\n\n")
+
+print(f"Markdown saved: {md_path}")
+print("\n" + "="*60)
+print("Done!")
+HEREDOC
         env:
           MIN_RATING: ${{ github.event.inputs.min_rating || 800 }}
           MAX_RATING: ${{ github.event.inputs.max_rating || 1300 }}
-
-      - name: Run Python script
-        run: python3 generate.py
 
       - name: Commit and Push
         run: |
@@ -171,4 +160,4 @@ jobs:
           git config --local user.name "GitHub Action"
           git add thinking-questionnaires/
           git commit -m "🧠 Auto-generate thinking flow questionnaire $(date +%Y-%m-%d)" || echo "No changes to commit"
-          git push      
+          git push    
