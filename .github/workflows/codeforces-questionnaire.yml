@@ -160,4 +160,4 @@ HEREDOC
           git config --local user.name "GitHub Action"
           git add thinking-questionnaires/
           git commit -m "🧠 Auto-generate thinking flow questionnaire $(date +%Y-%m-%d)" || echo "No changes to commit"
-          git push    
+          git push
