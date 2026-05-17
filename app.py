@@ -53,7 +53,7 @@ def render_project_overview():
         st.success("""
         ## 🎯 项目特色
 
-        1. **🤖 ThoughtSim 思维模拟器**
+        1. **🤖 SynapGraph 思绘**
            - 严格控制变量的神经网络实验
            - 可量化的思维方式差异指标
 
@@ -207,21 +207,21 @@ def main():
     if page == "🏠 项目概览":
         render_project_overview()
     elif page == "🧬 神经网络模拟":
-        # 使用 ThoughtSim 库渲染
-        st.info("🧠 思维模拟功能由 ThoughtSim 独立库提供支持")
+        # 使用 SynapGraph 库渲染
+        st.info("🧠 思维模拟功能由 SynapGraph 独立库提供支持")
         st.markdown("""
-        **ThoughtSim** 是从 MetaLang 中独立出来的思维模拟核心引擎。
+        **SynapGraph** 是从 MetaLang 中独立出来的思维模拟核心引擎。
 
-        - GitHub: [EasonTechno/ThoughtSim](https://github.com/EasonTechno/ThoughtSim)
-        - PyPI: `pip install thoughtsim`
+        - GitHub: [EasonTechno/SynapGraph](https://github.com/EasonTechno/SynapGraph)
+        - PyPI: `pip install synapgraph`
 
         下面是集成演示：
         """)
 
         with st.echo():
-            from thoughtsim import ThoughtSimulator
+            from synapgraph import SynapGraphulator
 
-            sim = ThoughtSimulator(native_language="Chinese")
+            sim = SynapGraphulator(native_language="Chinese")
             sim.anchor_native_network()
 
             # 训练子网络
