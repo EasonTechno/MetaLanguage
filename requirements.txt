@@ -2,4 +2,4 @@ streamlit>=1.30.0
 pandas>=2.0.0
 numpy>=1.24.0
 Pillow>=10.0.0
-thoughtsim>=0.1.0
+synapgraph>=0.1.0
