@@ -1,0 +1,39 @@
+{
+  "task_id": "moral_judgment_0001",
+  "task_type": "moral_judgment",
+  "difficulty": "advanced",
+  "versions": {
+    "zh": {
+      "language": "zh",
+      "title": "电车难题",
+      "description": "经典道德困境问题，测试功利主义与道义论的道德判断。",
+      "question": "一辆失控的电车正在轨道上疾驰，前方轨道上绑着五个人。你站在轨道旁的一个拉杆旁边，拉动拉杆可以将电车切换到另一条轨道上，但那条轨道上绑着一个人。你会选择拉动拉杆吗？",
+      "options": [
+        "肯定会拉动拉杆",
+        "可能会拉动拉杆",
+        "不确定",
+        "可能不会拉动拉杆",
+        "肯定不会拉动拉杆"
+      ],
+      "correct_answer": null,
+      "hint": "思考：牺牲一个人的生命来拯救五个人，在道德上是否正当？"
+    },
+    "en": {
+      "language": "en",
+      "title": "The Trolley Problem",
+      "description": "Classic moral dilemma testing utilitarian vs. deontological moral judgment.",
+      "question": "A runaway trolley is speeding down the tracks where five people are tied up. You are standing next to a lever. Pulling the lever will switch the trolley to a different track, where one person is tied up. Will you pull the lever?",
+      "options": [
+        "Definitely pull the lever",
+        "Probably pull the lever",
+        "Not sure",
+        "Probably not pull the lever",
+        "Definitely not pull the lever"
+      ],
+      "correct_answer": null,
+      "hint": "Think: Is it morally justified to sacrifice one life to save five?"
+    }
+  },
+  "tags": ["道德判断", "电车难题", "功利主义", "道义论", "Footbridge困境"],
+  "reference": "Foot, P. (1967). The Problem of Abortion and the Doctrine of the Double Effect"
+}
