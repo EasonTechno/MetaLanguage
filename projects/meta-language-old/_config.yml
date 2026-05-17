@@ -1,0 +1,6 @@
+# 项目主页配置
+theme: jekyll-theme-minimal
+title: 🧠 元语言计划
+description: 通过神经网络模拟语言如何塑造人类思维，开发可迁移到人类的认知增强技术
+show_downloads: true
+logo: https://github.githubassets.com/images/icons/emoji/unicode/1f9e0.png
