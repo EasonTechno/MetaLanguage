@@ -1,0 +1,27 @@
+{
+  "task_id": "creative_thinking_0001",
+  "task_type": "creative_thinking",
+  "difficulty": "intermediate",
+  "versions": {
+    "zh": {
+      "language": "zh",
+      "title": "砖头用途",
+      "description": "发散思维经典任务：尽可能多地想出一个普通物体的不寻常用途。",
+      "question": "在下面空白处，尽可能多地写下你能想到的砖头的所有不寻常用途。越有创意越好！\n\n例如：不是简单地说\"建房子\"，而是\"用作门挡\"、\"用作镇纸\"等。",
+      "options": null,
+      "correct_answer": null,
+      "hint": "尝试打破功能固着！想想砖头的属性：重量、硬度、形状、材质、颜色..."
+    },
+    "en": {
+      "language": "en",
+      "title": "Brick Uses",
+      "description": "Classic divergent thinking task: Generate as many unusual uses for an ordinary object as possible.",
+      "question": "In the space below, write down as many unusual uses for a brick as you can think of. The more creative the better!\n\nExample: Instead of \"build houses\", think \"doorstop\", \"paperweight\", etc.",
+      "options": null,
+      "correct_answer": null,
+      "hint": "Try to break functional fixedness! Think about brick's properties: weight, hardness, shape, material, color..."
+    }
+  },
+  "tags": ["创造性思维", "发散思维", "功能固着", "吉尔福特"],
+  "reference": "Guilford, J. P. (1967). The Nature of Human Intelligence"
+}
