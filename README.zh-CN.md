@@ -31,7 +31,7 @@
 3. 观察模型能否**完全绕过母语，直接用外语进行思考**
 4. 验证不同语言对特定问题的思考效率差异
 
-思维模拟核心引擎已独立为 **ThoughtSim** 库，可单独安装使用。
+思维模拟核心引擎已独立为 **SynapGraph** 库，可单独安装使用。
 
 ### 🚀 人类应用
 
@@ -48,11 +48,11 @@
 
 ## ✨ 项目特色
 
-### 🤖 ThoughtSim 思维模拟器（独立库）
+### 🤖 SynapGraph 思绘（独立库）
 - 严格控制变量，验证语言相对论的量化效果
 - 同一模型结构，不同"母语"初始化的对照实验
 - 可量化的思维方式差异指标
-- **独立开源项目**: [EasonTechno/ThoughtSim](https://github.com/EasonTechno/ThoughtSim)
+- **独立开源项目**: [EasonTechno/SynapGraph](https://github.com/EasonTechno/SynapGraph)
 
 ### 🛠️ 人类训练工具
 - 不需要你有 AI 背景，人人都能用
@@ -82,7 +82,7 @@
 - Python 3.9+
 - Streamlit
 - Pillow
-- **ThoughtSim** (思维模拟器核心库)
+- **SynapGraph** (思绘核心库)
 
 ### 启动项目
 
@@ -95,19 +95,19 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-### 单独使用思维模拟器
+### 单独使用思绘
 
-ThoughtSim 已独立为可安装的 Python 库：
+SynapGraph 已独立为可安装的 Python 库：
 
 ```bash
-pip install thoughtsim
+pip install synapgraph
 ```
 
 ```python
-from thoughtsim import ThoughtSimulator
+from synapgraph import SynapGraphulator
 
 # 初始化模拟器，设置母语
-sim = ThoughtSimulator(native_language="Chinese")
+sim = SynapGraphulator(native_language="Chinese")
 
 # 锚定母语网络
 sim.anchor_native_network()
@@ -139,7 +139,7 @@ MetaLang/
 ├── 📄 app.py                          # Streamlit 主程序
 ├── 📄 README.md                       # 中文文档（本文档）
 ├── 📄 README.en.md                    # English Documentation
-├── 📄 requirements.txt                # 依赖（包含 thoughtsim）
+├── 📄 requirements.txt                # 依赖（包含 synapgraph）
 ├── 📄 start.sh                        # 一键启动脚本
 ├── 📂 .github/
 │   └── 📂 workflows/
@@ -180,7 +180,7 @@ MetaLang/
 我们目前需要：
 1. 🧪 更多"思维语言"的设计与验证
 2. 📊 训练效果的量化指标设计
-3. 🤖 神经网络对照实验的扩展（提交到 ThoughtSim 仓库）
+3. 🤖 神经网络对照实验的扩展（提交到 SynapGraph 仓库）
 4. 📝 更多类型的思维流问卷
 5. 🌍 多语言翻译支持（法语、日语等）
 
@@ -207,7 +207,7 @@ MetaLang/
 ## 📬 联系与交流
 
 - **GitHub (主项目)**: [EasonTechno/MetaLang](https://github.com/EasonTechno/MetaLang)
-- **GitHub (思维模拟器)**: [EasonTechno/ThoughtSim](https://github.com/EasonTechno/ThoughtSim)
+- **GitHub (思绘)**: [EasonTechno/SynapGraph](https://github.com/EasonTechno/SynapGraph)
 - **邮箱**: uu13652153631@qq.com
 - **维护者**: [@EasonTechno](https://github.com/EasonTechno)
 
