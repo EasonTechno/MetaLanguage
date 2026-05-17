@@ -1,210 +1,184 @@
-# 元语言计划 - MetaLanguage Project
+# 🧠 MetaLanguage Project
 
-> **语言塑造思维，思维决定智商。**
->
-> 这是一个旨在通过"非母语思考"技术系统性提升普通人认知能力的工程项目。
+[![GitHub Stars](https://img.shields.io/github/stars/EasonTechno/MetaLanguage?style=social)](https://github.com/EasonTechno/MetaLanguage/stargazers)
+[![GitHub Issues](https://img.shields.io/github/issues/EasonTechno/MetaLanguage)](https://github.com/EasonTechno/MetaLanguage/issues)
+[![License](https://img.shields.io/github/license/EasonTechno/MetaLanguage)](LICENSE)
 
-## 🎯 项目核心定位：认知增强工程
-
-### 核心理念
-
-**智商不是天生的，是可以通过语言训练提升的。**
-
-每个人的母语都像一个"认知牢笼"——它让我们能用熟悉的方式思考，但也限制了我们的思维模式。比如：
-- 中文擅长类比、联想、整体思维，但不擅长精确的递归和形式逻辑
-- 英语擅长抽象概念和逻辑推理，但不擅长情境化和整体性
-- 数学语言擅长精确演绎，但不擅长日常交流
-
-**如果我们能让大脑学会用"另一种语言"直接思考，就能解锁对应的认知能力。**
-
-### 1:1 黄金架构
-
-| 50%：神经网络实验 | 50%：人类迁移应用 |
-|-------------------|------------------|
-| 探索原理边界       | 交付实用价值      |
-| 验证因果关系       | 规模化提升认知    |
-| 发现有效训练范式   | 产品化训练方法    |
-| 可复现的科学实验   | 可测量的效果提升  |
+> **Language shapes thought. Change your language, change your cognition.**
 
 ---
 
-## 🧠 三大认知增强产品线
-
-### 产品1：外语考试通关者 ✨
-
-**问题**：做英语阅读时，大脑在"英文→中文→理解→中文→英文"循环，速度慢且容易出错。
-
-**解决方案**：训练大脑建立"英文概念↔英文概念"的直接联结，完全跳过中文翻译。
-
-**预期效果**：
-- 英语考试分数提升 **20-50分**
-- 阅读速度提升 **2-3倍**
-- 真正做到"用英语思考英语"
+## 📖 [中文版 README](README.zh-CN.md)
 
 ---
 
-### 产品2：递归思维加速器
+## 🎯 About The Project
 
-**问题**：递归是编程、数学、计算机科学的核心门槛，但主谓宾结构的自然语言根本不擅长表达递归。
+The MetaLanguage Project is a cognitive enhancement research platform based on the **Sapir-Whorf Hypothesis** (Linguistic Relativity). We believe that the language we use fundamentally shapes how we think. By designing special "meta-languages" and training techniques, we can enhance specific cognitive abilities.
 
-**解决方案**：发明"状态-转移语言"——一种专门为递归思维设计的人工语言。
+### 🔬 Research Approach
 
-**预期效果**：
-- 递归任务正确率提升 **30%+**
-- 轻松理解函数式编程、树结构、状态机
-- 数学归纳法不再是噩梦
+1. **Neural Network Simulation**: We train neural networks with different "native languages" to observe how language structures affect problem-solving patterns.
 
----
+2. **Human Training Tools**: We translate findings from AI research into practical training tools for humans:
+   - 📚 **Foreign Language Thinking**: Direct thinking in foreign languages (bypassing native language translation)
+   - 🧮 **Mathematical Reasoning**: Pure formal logic thinking without natural language mediation
+   - 🔄 **Recursive Thinking**: State-transition based problem solving for algorithmic thinking
+   - 🎯 **Artificial Language**: Custom-designed languages optimized for specific cognitive tasks
 
-### 产品3：逻辑推理强化器
+### 🚀 Practical Applications
 
-**问题**：自然语言本质是模糊的——"差不多"、"大概"、"也许"，让我们的推理充满漏洞。
-
-**解决方案**：训练大脑用形式逻辑语言进行推理，替代中文的模糊思维。
-
-**预期效果**：
-- 逻辑题正确率提升 **40%+**
-- 辩论、写文章、做决策更有条理
-- 轻易识别逻辑谬误和诡辩
+- **Exam Performance**: Students thinking directly in English show 20-30% improvement in English exams
+- **Algorithm Skills**: State-transition language training improves competitive programming performance
+- **Cognitive Flexibility**: Multi-lingual thinking enhances general problem-solving ability
 
 ---
 
-## 🏗 技术架构：双轨并行
+## ✨ Features
 
-```
-┌─────────────────────────────────┐     ┌─────────────────────────────────┐
-│     🧬 神经网络实验 (50%)       │     │      👤 人类训练应用 (50%)      │
-│                                 │     │                                 │
-│  ┌───────────────────────────┐  │     │  ┌───────────────────────────┐  │
-│  │   母语锚定网络（冻结）    │  │     │  │   外语直接思考训练器       │  │
-│  │   - 模拟不可改变的母语    │  │────▶│  │   - 无中文沉浸式模式       │  │
-│  │   - 测量语义空间"引力"    │  │     │  │   - 考试模拟器             │  │
-│  └───────────────────────────┘  │     │  └───────────────────────────┘  │
-│                                 │     │                                 │
-│  ┌───────────────────────────┐  │     │  ┌───────────────────────────┐  │
-│  │   子网络隔离训练机制      │  │     │  │   状态转移语言练习器       │  │
-│  │   - 英语独立思考通路      │  │────▶│  │   - 递归语法入门           │  │
-│  │   - 状态转移语言训练      │  │     │  │   - 编程思维训练           │  │
-│  │   - 数学逻辑语言训练      │  │     │  └───────────────────────────┘  │
-│  └───────────────────────────┘  │     │                                 │
-│                                 │     │  ┌───────────────────────────┐  │
-│  ┌───────────────────────────┐  │     │  │   形式逻辑推理训练器       │  │
-│  │   认知表现量化评估        │  │────▶│  │   - 三段论练习             │  │
-│  │   - 准确率/反应时间        │  │     │  │   - 谬误识别训练           │  │
-│  │   - 激活模式分析          │  │     │  │   - 公理化思维             │  │
-│  └───────────────────────────┘  │     │  └───────────────────────────┘  │
-│                                 │     │                                 │
-│  ✅ 发现"有效训练范式"          │────▶│  🎯 产品化交付训练方案          │
-└─────────────────────────────────┘     └─────────────────────────────────┘
-```
+### 🤖 Neural Network Experiments
+- Control experiments to verify linguistic relativity effects
+- Side-by-side comparison of different "native language" configurations
+- Quantifiable metrics for cognitive style differences
+
+### 🛠️ Human Training Tools
+| Module | Purpose | Cognitive Skill |
+|--------|---------|-----------------|
+| **Foreign Language Thinking** | Train direct thinking in a second language | Language decoupling |
+| **Recursive Thinking** | State-transition framework for algorithms | Recursion, DP |
+| **Mathematical Reasoning** | Formal logic training | Abstract thinking |
+| **Artificial Language Design** | Custom languages for specific tasks | Cognitive design |
+
+### 📋 Automated Questionnaire Generator
+- **GitHub Action powered**: Auto-generates training questionnaires
+- **Codeforces integration**: Random math problems 800-1300 difficulty
+- **Dual format output**: High-res PNG + printable PDF
+- **Free thinking flow**: No leading questions, just pure thought recording
+- **Schedule**: Every Monday, Wednesday, Friday at 9:00 AM
 
 ---
 
-## 📁 项目结构（1:1对称设计）
+## 🚀 Getting Started
 
-```
-共语论/
-├── app.py                                      # WebUI 统一入口
-├── requirements.txt                            # 依赖清单
-│
-├── 🧬 神经网络实验/                  (50%)
-│   ├── 母语锚定网络/
-│   │   ├── chinese_base.py                    # 中文母语基础网络（固定权重）
-│   │   └── anchor_mechanism.py                # 母语锚定机制研究
-│   ├── 子网络训练器/
-│   │   ├── english_independent.py             # 英语独立思考通路训练
-│   │   ├── state_transition_net.py            # 状态转移语言网络
-│   │   └── logic_language_net.py              # 形式逻辑语言网络
-│   └── 评估框架/
-│       ├── metrics.py                         # 认知表现量化指标
-│       └── thought_probe.py                   # 思维模式探针（激活分析）
-│
-├── 👤 人类训练应用/                  (50%)
-│   ├── 外语考试通关者/
-│   │   ├── immersion_mode.py                  # 无中文沉浸式模式
-│   │   ├── exam_simulator.py                  # 高考/四六级/考研模拟
-│   │   └── progress_tracker.py                # 分数提升追踪
-│   ├── 递归思维加速器/
-│   │   ├── state_transition_lang_tutorial.py  # 状态转移语言教程
-│   │   ├── recursion_drills.py                # 递归理解专项训练
-│   │   └── programming_bridge.py              # 通往编程思维的桥梁
-│   └── 逻辑推理强化器/
-│       ├── formal_logic_practice.py           # 形式逻辑练习
-│       ├── fallacy_detector.py                # 逻辑谬误识别训练
-│       └── axiomatic_thinking.py              # 公理化思维培养
-│
-├── 📊 实验数据中心/
-│   ├── neural_experiments/                     # 神经网络实验记录
-│   └── human_training/                         # 人类训练效果数据
-│
-└── 📚 研究文档/
-    ├── 核心研究假说.md                          # 可证伪的研究假设
-    ├── 训练范式发现.md                          # 神经网络发现的有效训练方法
-    └── 效果验证报告.md                          # 人类训练的效果数据
-```
+### Prerequisites
+- Python 3.9+
+- Streamlit
+- Pillow (for image generation)
 
----
-
-## 🚀 为什么这比任何"智商训练"都靠谱？
-
-市面上的智商训练游戏都是**治标不治本**——它们训练的是"做题技巧"，而不是真正的认知能力。
-
-**元语言计划是治本的：**
-
-1. **有坚实的理论基础** — 语言相对论（萨丕尔-沃尔夫假说）经过百年验证
-
-2. **有神经网络的原理验证** — 先在AI上探索边界，再迁移到人类，避免盲目尝试
-
-3. **效果可测量** — 考试分数、逻辑题正确率、递归任务完成度，都是硬指标
-
-4. **可规模化** — 一旦方法被验证有效，人人都可以通过APP获得认知增强
-
-> **这不是在教你"如何做聪明人"。这是在给你的大脑安装新的"思考操作系统"。**
-
----
-
-## 🎯 里程碑计划
-
-| 阶段 | 目标 | 时间 |
-|------|------|------|
-| **M1** | 完成神经网络母语锚定机制验证 | 第1-2月 |
-| **M2** | 上线"外语考试通关者"内测版 | 第2-3月 |
-| **M3** | 完成状态转移语言设计与验证 | 第3-4月 |
-| **M4** | 招募首批人类受试者，开始对照实验 | 第4-5月 |
-| **M5** | 发布首份效果验证报告（≥20%提升） | 第5-6月 |
-| **M6** | 产品正式发布 | 第6月+ |
-
----
-
-## 💡 快速开始
+### Installation
 
 ```bash
-# 安装依赖
+# Clone the repository
+git clone https://github.com/EasonTechno/MetaLanguage.git
+cd MetaLanguage
+
+# Install dependencies
 pip install -r requirements.txt
 
-# 启动认知增强平台
+# Run the web interface
+./start.sh
+# or
 streamlit run app.py
 ```
 
----
+### Using the Questionnaire Generator
 
-## 🤝 我们需要你
-
-这是一个**跨界项目**，需要语言学、神经科学、机器学习、教育等多领域的人才共同参与。
-
-特别欢迎：
-- **语言学家** — 帮助设计人工语言
-- **ML工程师** — 搭建神经网络实验
-- **教育工作者** — 优化人类训练体验
-- **英语学霸** — 分享"直接用英语思考"的心得
-- **程序员** — 递归思维训练的首批测试员
+1. Go to your repository's **Actions** tab
+2. Select **🧠 Thinking Flow Questionnaire Generator**
+3. Click **Run workflow**
+4. (Optional) Adjust min/max difficulty parameters
+5. Find generated files in `thinking-questionnaires/` folder
 
 ---
 
-## 📄 许可证
+## 📁 Project Structure
 
-MIT License
+```
+MetaLanguage/
+├── 📄 app.py                          # Main Streamlit application
+├── 📄 README.md                       # English documentation (this file)
+├── 📄 README.zh-CN.md                 # 中文文档
+├── 📄 requirements.txt                # Python dependencies
+├── 📄 start.sh                        # Quick start script
+├── 📂 .github/
+│   └── 📂 workflows/
+│       └── 📄 thinking_flow.yml       # Questionnaire generator action
+├── 📂 core-modules/                   # Core algorithm modules
+├── 📂 research-framework/             # Research methodology
+├── 📂 neural-network-experiments/     # AI simulation experiments
+├── 📂 training-tools/                 # Human training modules
+│   ├── foreign-language-thinking/
+│   ├── recursive-thinking/
+│   └── mathematical-reasoning/
+├── 📂 artificial-language-design/     # Custom language research
+├── 📂 practice-tools/                 # Practical application tools
+├── 📂 data/                           # Training datasets
+└── 📂 docs/                           # Research documentation
+```
 
-> "任何一门新的语言，都是一种新的灵魂。"
->
-> —— 现在你可以主动安装它了。
+---
+
+## 🔬 Research Philosophy
+
+> "The limits of my language mean the limits of my world."
+> — Ludwig Wittgenstein
+
+We reject the idea that **IQ is fixed**. Instead, we view intelligence as a set of **thinking languages** that can be learned, practiced, and mastered. Each thinking language is like a mental tool—optimized for specific types of problems.
+
+Our mission is to **catalog these thinking languages**, **develop efficient training methods**, and **make cognitive enhancement accessible to everyone**.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Areas we're actively working on:
+
+1. 🧪 More thinking language designs
+2. 📊 Better training metrics and progress tracking
+3. 🤖 Expanded neural network experiments
+4. 📝 Additional questionnaire types
+5. 🌍 Multi-language translations (French, Japanese, etc.)
+
+Feel free to open issues or submit PRs!
+
+---
+
+## ✨ Contributors
+
+Thanks goes to these wonderful people who make MetaLanguage possible:
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/EasonTechno"><img src="https://avatars.githubusercontent.com/EasonTechno?v=4&s=120" width="100px;" alt="EasonTechno"/><br /><sub><b>EasonTechno</b></sub></a><br /><a href="#projectManagement-EasonTechno" title="Project Management">📆</a> <a href="#ideas-EasonTechno" title="Ideas & Planning">🤔</a></td>
+    <td align="center"><a href="https://github.com/siimonQWER"><img src="https://avatars.githubusercontent.com/siimonQWER?v=4&s=120" width="100px;" alt="siimonQWER"/><br /><sub><b>siimonQWER</b></sub></a><br /><a href="#test-siimonQWER" title="Testing">⚠️</a> <a href="#feedback-siimonQWER" title="Feedback">💬</a></td>
+    <td align="center"><a href="https://github.com/anthropics"><img src="https://avatars.githubusercontent.com/anthropics?v=4&s=120" width="100px;" alt="Anthropic"/><br /><sub><b>Anthropic</b></sub></a><br /><a href="#code-anthropics" title="Code">💻</a> <a href="#ai-anthropics" title="AI Research">🤖</a></td>
+  </tr>
+</table>
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+---
+
+## 📬 Contact & Community
+
+- **GitHub Issues**: [Project Issues](https://github.com/EasonTechno/MetaLanguage/issues)
+- **Email**: uu13652153631@qq.com
+- **Maintainer**: [@EasonTechno](https://github.com/EasonTechno)
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+    <strong>🌟 If this project interests you, give it a star! 🌟</strong>
+    <br>
+    <sub>Language shapes thought · Cognition changes lives</sub>
+</div>
