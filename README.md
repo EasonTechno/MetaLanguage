@@ -167,7 +167,7 @@ Thanks to everyone who made MetaLang possible:
     <td align="center"><a href="https://github.com/EasonTechno"><img src="https://avatars.githubusercontent.com/EasonTechno?v=4&s=120" width="100px;" alt="EasonTechno"/><br /><sub><b>EasonTechno</b></sub></a><br /><a href="#projectManagement-EasonTechno" title="Project Management">📆</a> <a href="#ideas-EasonTechno" title="Ideas & Planning">🤔</a></td>
     <td align="center"><a href="https://github.com/siimonQWER"><img src="https://avatars.githubusercontent.com/siimonQWER?v=4&s=120" width="100px;" alt="siimonQWER"/><br /><sub><b>siimonQWER</b></sub></a><br /><a href="#test-siimonQWER" title="Testing">⚠️</a> <a href="#feedback-siimonQWER" title="Feedback">💬</a></td>
     <td align="center"><a href="https://github.com/Claude"><img src="https://avatars.githubusercontent.com/Claude?v=4&s=120" width="100px;" alt="Claude"/><br /><sub><b>Claude</b></sub></a><br /><a href="#code-Claude" title="Code">💻</a> <a href="#ai-anthropics" title="AI Research">🤖</a></td>
-    <td align="center"><a href="https://github.com/杀死那个贝尔曼代数线形几何微分几何啊啊啊"><img src="https://avatars.githubusercontent.com/u/0?v=4&s=120" width="100px;" alt="杀死那个贝尔曼代数线形几何微分几何啊啊啊"/><br /><sub><b>杀死那个贝尔曼代数线形几何微分几何啊啊啊</b></sub></a><br /><a href="#ideas" title="Ideas">🤔</a> <a href="#feedback" title="Feedback">💬</a></td>
+    
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/道爷我成了"><img src="https://avatars.githubusercontent.com/u/0?v=4&s=120" width="100px;" alt="道爷我成了"/><br /><sub><b>道爷我成了</b></sub></a><br /><a href="#test" title="Testing">⚠️</a> <a href="#feedback" title="Feedback">💬</a></td>
