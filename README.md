@@ -162,50 +162,57 @@ Feel free to open Issues or submit PRs!
 Thanks to everyone who made MetaLang possible:
 
 <!-- ALL-CONTRIBUTORS-LIST:START -->
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/EasonTechno"><img src="https://avatars.githubusercontent.com/EasonTechno?v=4&s=120" width="100px;" alt="EasonTechno"/><br /><sub><b>EasonTechno</b></sub></a><br /><a href="#projectManagement-EasonTechno" title="Project Management">📆</a> <a href="#ideas-EasonTechno" title="Ideas & Planning">🤔</a></td>
-    <td align="center"><a href="https://github.com/siimonQWER"><img src="https://avatars.githubusercontent.com/siimonQWER?v=4&s=120" width="100px;" alt="siimonQWER"/><br /><sub><b>siimonQWER</b></sub></a><br /><a href="#test-siimonQWER" title="Testing">⚠️</a> <a href="#feedback-siimonQWER" title="Feedback">💬</a></td>
-    <td align="center"><a href="https://github.com/Claude"><img src="https://avatars.githubusercontent.com/Claude?v=4&s=120" width="100px;" alt="Claude"/><br /><sub><b>Claude</b></sub></a><br /><a href="#code-Claude" title="Code">💻</a> <a href="#ai-anthropics" title="AI Research">🤖</a></td>
-    
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/道爷我成了"><img src="https://avatars.githubusercontent.com/u/0?v=4&s=120" width="100px;" alt="道爷我成了"/><br /><sub><b>道爷我成了</b></sub></a><br /><a href="#test" title="Testing">⚠️</a> <a href="#feedback" title="Feedback">💬</a></td>
-    <td align="center"><a href="https://github.com/噬菌体侵染降噪耳机"><img src="https://avatars.githubusercontent.com/u/0?v=4&s=120" width="100px;" alt="噬菌体侵染降噪耳机"/><br /><sub><b>噬菌体侵染降噪耳机</b></sub></a><br /><a href="#test" title="Testing">⚠️</a> <a href="#feedback" title="Feedback">💬</a></td>
-    <td align="center"><a href="https://github.com/parity-police"><img src="https://avatars.githubusercontent.com/u/0?v=4&s=120" width="100px;" alt="parity-police"/><br /><sub><b>parity-police</b></sub></a><br /><a href="#test" title="Testing">⚠️</a> <a href="#feedback" title="Feedback">💬</a></td>
-    <td align="center"><a href="https://github.com/lmy"><img src="https://avatars.githubusercontent.com/u/0?v=4&s=120" width="100px;" alt="lmy"/><br /><sub><b>lmy</b></sub></a><br /><a href="#test" title="Testing">⚠️</a> <a href="#feedback" title="Feedback">💬</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/何嘉豪"><img src="https://avatars.githubusercontent.com/u/0?v=4&s=120" width="100px;" alt="何嘉豪"/><br /><sub><b>何嘉豪</b></sub></a><br /><a href="#test" title="Testing">⚠️</a> <a href="#feedback" title="Feedback">💬</a></td>
-    <td align="center"><a href="https://github.com/今天晚上吃点啥"><img src="https://avatars.githubusercontent.com/u/0?v=4&s=120" width="100px;" alt="今天晚上吃点啥"/><br /><sub><b>今天晚上吃点啥</b></sub></a><br /><a href="#test" title="Testing">⚠️</a> <a href="#feedback" title="Feedback">💬</a></td>
-    <td align="center"><a href="https://github.com/注意力惊人"><img src="https://avatars.githubusercontent.com/u/0?v=4&s=120" width="100px;" alt="注意力惊人"/><br /><sub><b>注意力惊人</b></sub></a><br /><a href="#test" title="Testing">⚠️</a> <a href="#feedback" title="Feedback">💬</a></td>
-    <td align="center"><a href="https://github.com/数学数学我们喜欢你"><img src="https://avatars.githubusercontent.com/u/0?v=4&s=120" width="100px;" alt="数学数学我们喜欢你"/><br /><sub><b>数学数学我们喜欢你</b></sub></a><br /><a href="#test" title="Testing">⚠️</a> <a href="#feedback" title="Feedback">💬</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/IAKIOI"><img src="https://avatars.githubusercontent.com/u/0?v=4&s=120" width="100px;" alt="IAKIOI"/><br /><sub><b>IAKIOI</b></sub></a><br /><a href="#test" title="Testing">⚠️</a> <a href="#feedback" title="Feedback">💬</a></td>
-    <td align="center"><a href="https://github.com/钥匙"><img src="https://avatars.githubusercontent.com/u/0?v=4&s=120" width="100px;" alt="钥匙"/><br /><sub><b>钥匙</b></sub></a><br /><a href="#test" title="Testing">⚠️</a> <a href="#feedback" title="Feedback">💬</a></td>
-    <td align="center"><a href="https://github.com/KingFrank"><img src="https://avatars.githubusercontent.com/u/0?v=4&s=120" width="100px;" alt="KingFrank"/><br /><sub><b>KingFrank</b></sub></a><br /><a href="#test" title="Testing">⚠️</a> <a href="#feedback" title="Feedback">💬</a></td>
-    <td align="center"><a href="https://github.com/可以随便取名吗"><img src="https://avatars.githubusercontent.com/u/0?v=4&s=120" width="100px;" alt="可以随便取名吗"/><br /><sub><b>可以随便取名吗</b></sub></a><br /><a href="#test" title="Testing">⚠️</a> <a href="#feedback" title="Feedback">💬</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/NPC"><img src="https://avatars.githubusercontent.com/u/0?v=4&s=120" width="100px;" alt="NPC"/><br /><sub><b>NPC</b></sub></a><br /><a href="#test" title="Testing">⚠️</a> <a href="#feedback" title="Feedback">💬</a></td>
-    <td align="center"><a href="https://github.com/zhr的桌子～"><img src="https://avatars.githubusercontent.com/u/0?v=4&s=120" width="100px;" alt="zhr的桌子～"/><br /><sub><b>zhr的桌子～</b></sub></a><br /><a href="#test" title="Testing">⚠️</a> <a href="#feedback" title="Feedback">💬</a></td>
-    <td align="center"><a href="https://github.com/Siimon哥我男神😘"><img src="https://avatars.githubusercontent.com/u/0?v=4&s=120" width="100px;" alt="Siimon哥我男神😘"/><br /><sub><b>Siimon哥我男神😘</b></sub></a><br /><a href="#test" title="Testing">⚠️</a> <a href="#feedback" title="Feedback">💬</a></td>
-    <td align="center"><a href="https://github.com/zyc的零食呢"><img src="https://avatars.githubusercontent.com/u/0?v=4&s=120" width="100px;" alt="zyc的零食呢"/><br /><sub><b>zyc的零食呢</b></sub></a><br /><a href="#test" title="Testing">⚠️</a> <a href="#feedback" title="Feedback">💬</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/王昊宇"><img src="https://avatars.githubusercontent.com/u/0?v=4&s=120" width="100px;" alt="王昊宇"/><br /><sub><b>王昊宇</b></sub></a><br /><a href="#test" title="Testing">⚠️</a> <a href="#feedback" title="Feedback">💬</a></td>
-    <td align="center"><a href="https://github.com/KeYanZhao"><img src="https://avatars.githubusercontent.com/u/0?v=4&s=120" width="100px;" alt="KeYanZhao"/><br /><sub><b>KeYanZhao</b></sub></a><br /><a href="#test" title="Testing">⚠️</a> <a href="#feedback" title="Feedback">💬</a></td>
-    <td align="center"><a href="https://github.com/双叉犀金蛋"><img src="https://avatars.githubusercontent.com/u/0?v=4&s=120" width="100px;" alt="双叉犀金蛋"/><br /><sub><b>双叉犀金蛋</b></sub></a><br /><a href="#test" title="Testing">⚠️</a> <a href="#feedback" title="Feedback">💬</a></td>
-    <td align="center"><a href="https://github.com/66789"><img src="https://avatars.githubusercontent.com/u/0?v=4&s=120" width="100px;" alt="66789"/><br /><sub><b>66789</b></sub></a><br /><a href="#test" title="Testing">⚠️</a> <a href="#feedback" title="Feedback">💬</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/麦斯欧德"><img src="https://avatars.githubusercontent.com/u/0?v=4&s=120" width="100px;" alt="麦斯欧德"/><br /><sub><b>麦斯欧德</b></sub></a><br /><a href="#test" title="Testing">⚠️</a> <a href="#feedback" title="Feedback">💬</a></td>
-    <td align="center"><a href="https://github.com/hz258258"><img src="https://avatars.githubusercontent.com/u/0?v=4&s=120" width="100px;" alt="hz258258"/><br /><sub><b>hz258258</b></sub></a><br /><a href="#test" title="Testing">⚠️</a> <a href="#feedback" title="Feedback">💬</a></td>
-    <td align="center"><a href="https://github.com/Masud"><img src="https://avatars.githubusercontent.com/u/0?v=4&s=120" width="100px;" alt="Masud"/><br /><sub><b>Masud</b></sub></a><br /><a href="#test" title="Testing">⚠️</a> <a href="#feedback" title="Feedback">💬</a></td>
-  </tr>
-</table>
+<div align="center">
+
+![Contributors](https://raw.githubusercontent.com/EasonTechno/MetaLang/main/contributors.svg)
+
+**Core Contributors**
+
+[![EasonTechno](https://avatars.githubusercontent.com/EasonTechno?v=4&s=80)](https://github.com/EasonTechno)
+[![siimonQWER](https://avatars.githubusercontent.com/siimonQWER?v=4&s=80)](https://github.com/siimonQWER)
+[![Claude](https://avatars.githubusercontent.com/Claude?v=4&s=80)](https://github.com/Claude)
+
+**Questionnaire Participants** (25 total)
+
+道爷我成了 · 噬菌体侵染降噪耳机 · parity-police · lmy · 何嘉豪 · 今天晚上吃点啥 · 注意力惊人 · 数学数学我们喜欢你 · IAKIOI · 钥匙 · KingFrank · 可以随便取名吗 · NPC · zhr的桌子～ · Siimon哥我男神😘 · zyc的零食呢 · 王昊宇 · KeYanZhao · 双叉犀金蛋 · 66789 · 麦斯欧德 · hz258258 · Masud
+
+**25** Contributors 🌟
+
+</div>
 <!-- ALL-CONTRIBUTORS-LIST:END -->
+
+---
+
+## 🏆 Special Thanks
+
+High-quality questionnaire responses (sorted by length):
+
+| Nickname | Words | Highlight |
+|----------|-------|-----------|
+| **噬菌体侵染降噪耳机** | 541 | Parametric method, tried multiple angles, clear logic |
+| **数学数学我们喜欢你** | 219 | c=0 enumeration, complete analysis with intuition |
+| **hz258258** | 216 | Only one with full verification, well-formatted |
+| **道爷我成了** | 150 | Quadratic equation perspective, detailed process |
+| **NPC** | 163 | "now" — cyber minimalism |
+| **注意力惊人** | 126 | Listed all 12 factor pairs for verification |
+
+---
+
+## 😂 Best Responses
+
+The most "soulful" answers from the questionnaire:
+
+> **道爷我成了**: Treating a as a variable... why are you doing this to me! My math failed again, my heart hurts so much!!! 苍羌蹬阶！！！
+
+> **lmy**: This is a number theory problem, I already quit competitive programming and you still won't let me go!!!
+
+> **KingFrank**: Who stuffed this into my TikTok? 😅
+
+> **王昊宇**: aaa
+
+> **Siimon哥我男神😘**: Doesn't exist, tried all three-odd and three-even cases, too lazy to calculate the rest
+
+> **数学数学我们喜欢你**: If c=0, the expression becomes (a+b)·ab = 2024... intuitively a and b can't be too small or too large
 
 ---
 
