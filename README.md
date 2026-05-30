@@ -189,12 +189,12 @@ High-quality questionnaire responses (sorted by length):
 
 | Nickname | Words | Highlight |
 |----------|-------|-----------|
-| **噬菌体侵染降噪耳机** | 541 | Parametric method, tried multiple angles, clear logic |
-| **数学数学我们喜欢你** | 219 | c=0 enumeration, complete analysis with intuition |
-| **hz258258** | 216 | Only one with full verification, well-formatted |
-| **道爷我成了** | 150 | Quadratic equation perspective, detailed process |
-| **NPC** | 163 | "now" — cyber minimalism |
-| **注意力惊人** | 126 | Listed all 12 factor pairs for verification |
+| **hz258258** | 225 | Only one with full verification, well-formatted |
+| **道爷我成了** | 202 | Quadratic equation perspective, detailed process |
+| **注意力惊人** | 185 | Listed all 12 factor pairs for verification |
+| **parity-police** | 182 | Mod 2 analysis, systematic approach |
+| **何嘉豪** | 172 | Symmetry analysis, case by case |
+| **今天晚上吃点啥** | 168 | Construction method, discovered cubic structure |
 
 ---
 
