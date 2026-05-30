@@ -162,19 +162,35 @@ Feel free to open Issues or submit PRs!
 Thanks to everyone who made MetaLang possible:
 
 <!-- ALL-CONTRIBUTORS-LIST:START -->
+
+### 🏆 Core Contributors
+
 <div align="center">
 
-**Core Contributors**
+| | | |
+|:---:|:---:|:---:|
+| <img src="https://avatars.githubusercontent.com/EasonTechno?v=4&s=100" width="80"><br>**EasonTechno**<br>📆PM 🤖Creator | <img src="https://avatars.githubusercontent.com/siimonQWER?v=4&s=100" width="80"><br>**siimonQWER**<br>⚠️Testing 💬Feedback | <img src="https://avatars.githubusercontent.com/Claude?v=4&s=100" width="80"><br>**Claude**<br>💻Code 🤖AI Research |
 
-[![EasonTechno](https://avatars.githubusercontent.com/EasonTechno?v=4&s=80)](https://github.com/EasonTechno)
-[![siimonQWER](https://avatars.githubusercontent.com/siimonQWER?v=4&s=80)](https://github.com/siimonQWER)
-[![Claude](https://avatars.githubusercontent.com/Claude?v=4&s=80)](https://github.com/Claude)
+</div>
 
-**Questionnaire Participants**
+### 🙏 Special Thanks
 
-杀死那个贝尔曼代数线形几何微分几何啊啊啊 · 道爷我成了 · 噬菌体侵染降噪耳机 · parity-police · lmy · 何嘉豪 · 今天晚上吃点啥 · 注意力惊人 · 数学数学我们喜欢你 · IAKIOI · 钥匙 · KingFrank · 可以随便取名吗 · NPC · zhr的桌子～ · Siimon哥我男神😘 · zyc的零食呢 · 王昊宇 · KeYanZhao · 双叉犀金蛋 · 66789 · 麦斯欧德 · hz258258 · Masud
+<div align="center">
 
-**26** Contributors 🌟
+| | | | | |
+|:---:|:---:|:---:|:---:|:---:|
+| <img src="https://avatars.githubusercontent.com/u/0?v=4&s=60" width="50"><br>**注意力惊人** | <img src="https://avatars.githubusercontent.com/u/0?v=4&s=60" width="50"><br>**parity-police** | <img src="https://avatars.githubusercontent.com/u/0?v=4&s=60" width="50"><br>**何嘉豪** | <img src="https://avatars.githubusercontent.com/u/0?v=4&s=60" width="50"><br>**杀死那个贝尔曼...** | <img src="https://avatars.githubusercontent.com/u/0?v=4&s=60" width="50"><br>**今天晚上吃点啥** |
+| <img src="https://avatars.githubusercontent.com/u/0?v=4&s=60" width="50"><br>**数学数学我们喜欢你** | <img src="https://avatars.githubusercontent.com/u/0?v=4&s=60" width="50"><br>**道爷我成了** | <img src="https://avatars.githubusercontent.com/u/0?v=4&s=60" width="50"><br>**噬菌体侵染降噪耳机** | <img src="https://avatars.githubusercontent.com/u/0?v=4&s=60" width="50"><br>**KeYanZhao** | <img src="https://avatars.githubusercontent.com/u/0?v=4&s=60" width="50"><br>**IAKIOI** |
+
+</div>
+
+### 🎯 Other Testers
+
+<div align="center">
+
+lmy · 钥匙 · KingFrank · 可以随便取名吗 · NPC · zhr的桌子～ · Siimon哥我男神😘 · zyc的零食呢 · 王昊宇 · 双叉犀金蛋 · 66789 · 麦斯欧德 · hz258258 · Masud
+
+**26 Contributors** 🌟
 
 </div>
 <!-- ALL-CONTRIBUTORS-LIST:END -->
